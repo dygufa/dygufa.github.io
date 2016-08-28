@@ -1,0 +1,14 @@
+body {
+	background: #23241f;
+}
+
+.hljs {
+	word-wrap: break-word;
+	margin: 10px 50px;
+}
+
+@media (max-width: 900px) {
+	.hljs { 
+		margin: 5px;
+	}
+}
