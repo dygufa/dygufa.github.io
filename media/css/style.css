@@ -37,7 +37,7 @@
 
 #profile a, .experience p a, #hardcopymsg a {
 	text-decoration: none;
-	color: #c65d62;
+	color: #8a0e0e;
 }
 
 #profile p {
@@ -67,11 +67,15 @@ section {
 	margin-bottom: 5px;
 }
 
+section .main-icon {
+	font-size: 40px;
+	text-align: center;
+}
 
 section h2 {
 	margin: 0;
 	text-align: center;
-	color: #c65d62;
+	/* color: #c65d62; */
 }
 
 section#skill ul {
@@ -90,7 +94,7 @@ section#skill ul li {
 section#skill .part2 {
 	margin: 25px 0 25px 0;
 	text-align: center;
-	color: #c65d62;
+	color: #8a0e0e;
 }
 
 #skillspart2 li span {
@@ -141,7 +145,7 @@ section#skill .part2 {
 
 	.experience p a[href]:after {
 		content: " ("attr(href)")";
-		color: #c65d62;
+		color: #8a0e0e;
 		font-style: italic;
 	}
 

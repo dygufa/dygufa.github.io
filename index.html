@@ -4,29 +4,139 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<meta charset="utf8"/>
-	<title>dygufa</title>
-	<meta name="description" content="Essa página só serve pra você saber meu email mesmo. ;)" />
+	<title>Rodrigo's Resume</title>
+	<link rel="stylesheet" href="media/css/normalize.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link type="text/css" rel="stylesheet" href="/media/css/main.css?t=2"/>
-	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-42103883-1', 'dygufa.com');
-	ga('send', 'pageview');
-	</script>
+	<link rel="stylesheet" href="media/css/style.css">
+	<script src="https://use.fontawesome.com/8080b9df3d.js"></script>
 </head>
 <body>
-	<section role="main">
-   		<div id="wrapper">
-   			<img id="avatar" src="/media/img/foto4.jpg"/>
-   			<div id="profile">
-   				<h1>Rodrigo Araujo</h1>
-   				<p>Hi, you can find my resume <a href="resume">here</a>. Besides that, I'm from <a href="https://en.wikipedia.org/wiki/Salvador,_Bahia" target="_blank">Salvador</a>, but right now I'm living in <a href="https://en.wikipedia.org/wiki/Reno,_Nevada" target="_blank">Reno</a>. Say hello: <a href="mailto:hello@dygufa.com">hello@dygufa.com</a>. :)</p>
-   			</div>
-   		</div>
-   	</section>
+	<div id="site">
+		<header id="header">
+			<p id="hardcopymsg">This is a hardcopy of my online resume: <a href="#">dygufa.com/resume</a></p>
+			<div id="avatar"><img src="media/img/avatar2.jpg"/></div>
+			<div id="profile">
+				<h1>Rodrigo Araujo</h1>
+				<p>
+					Full stack developer from Salvador (Brazil).
+					<!-- If you know how to code, you can see <a href="http://dygufa.com/coolresume">THIS (dygufa.com/coolresume)</a> cool version of my resume! -->
+					<br/>
+					<a href="mailto:hello@dygufa.com">hello@dygufa.com</a>
+					<br/>
+					<a href="http://www.linkedin.com/in/dygufa" target="_blank">linkedin.com/in/dygufa</a>
+					<br/>
+					<a href="http://github.com/dygufa" target="_blank">github.com/dygufa</a>
+				</p>
+			</div>
+		</header>
+
+		<section id="skill">
+			<div class="main-icon">
+				<i class="fa fa-code" aria-hidden="true"></i>
+			</div>
+			<h2>Skills</h2>
+			<ul>
+				<li>Javascript</li>
+				<li>Typescript</li>
+				<li>Node.js</li>
+				<li>React</li>
+				<li>Docker</li>
+				<li>RethinkDB</li>
+				<li>HTML5</li>
+				<li>CSS3</li>
+				<li>PHP (+CakePHP)</li>
+				<li>Redis</li>
+				<li>UNIX</li>
+				<li>Apache</li>
+				<li>NGINX</li>
+				<li>Caddy</li>
+				<li>Git</li>
+				<li>mySQL</li>
+				<li>MongoDB</li>
+				<li>Python</li>
+				<li>SHOUTcast</li>
+				<li>C</li>
+				<li>Responsive Design</li>
+			</ul>
+
+			<div class="clearfloat"></div>
+			<div class="part2">I have also played with [less than 100 hours(*) or a long time ago(+)]:</div>
+
+			<ul id="skillspart2">
+				<li>AngularJS <span>(*+)</span></li>
+				<li>Java <span>(+)</span></li>
+				<li>Ember.js <span>(*+)</span></li>
+				<li>Meteor.js <span>(*)</span></li>
+				<li>D3.js <span>(*)</span></li>
+			</ul>
+			<div class="clearfloat"></div>
+		</section>
+
+		<section id="experience">
+			<div class="main-icon">
+				<i class="fa fa-suitcase" aria-hidden="true"></i>
+			</div>
+			<h2>Work experience</h2>
+
+			<div class="experience">
+				<h3>Cubos</h3>
+				<p>Responsible for developing <i>i)</i> APIs for web applications and mobile apps using TypeScript, RethinkDB and Docker; <i>ii)</i> Web applications using React.js, TypeScript, Webpack and Minio. <a href="https://cubos.io" target="_blank">Cubos</a> also embraces Scrum for managing product development and Gitlab in order to manage the CI proccess. I've being part of Cubos since May 2016. </p>
+			</div>
+		</section>
+
+		<section id="experience">
+			<div class="main-icon">
+				<i class="fa fa-coffee" aria-hidden="true"></i>
+			</div>
+			<h2>Extra projects</h2>
+
+			<div class="experience">
+				<h3>Memuy</h3>
+				<p>Memuy is the easiest way to share files among friends. You just need to open memuy.com, drag and drop your files and then share the room name. To make easier for you to memorize the room name, we use short combinations, usually between 6 and 8 characthers. Considering this a solution for "fast-sharing", the rooms and files will be kept online for only 24 hours. <a href="https://memuy.com" target="_blank">Check it online</a>.</p>
+			</div>
+
+			<!-- <div class="experience">
+				<h3>Pixelaria <a href="media/img/sites/pixelaria.org.png" target="_blank"  class="screenshot">(screenshot)</a></h3>
+				<p>At first, Pixelaria was a fansite of Habbo Hotel - which is a famous social game - specializing in pixel art. After a few years the team has decided to focus on digital art. Pixelaria was awarded as third for Best Fansite between teens and features of it were used as inspiration for many other websites. In the period between 2010 to 2013 I was the Administrator and Developer for the website, managing a team with more than 50 people and over 1000 active users. The website was a LAMP application, using Ajax Polling to deliver features such as alerts, shared chat between users and a fully customizable page for each user using drag and drop.</p>
+			</div> -->
+
+			<div class="experience">
+				<h3>Adivinhe <a href="media/img/sites/adivinhe.com.png" target="_blank" class="screenshot">(screenshot)</a></h3>
+				<p>Adivinhe is a multiplayer game similar to the famous iSketch, the goal is to guess what is being drawn for the other players. Unlike iSketch, Adivinhe doesn’t use Adobe Flash Player, it was made using HTML5 (canvas) and NGINX/Node.js/MongoDB with Ajax Long-Polling and integrated Facebook login. Adivinhe's code is available on <a href="https://github.com/dygufa/adivinhe" target="_blank">GitHub</a>.</p>
+			</div>
+
+			<div class="experience">
+				<h3>Cooeemix <a href="media/img/sites/cooeemix.net.png" target="_blank"  class="screenshot">(screenshot)</a></h3>
+				<p>Cooeemix is an internet radio/portal for players from Club Cooee. The website uses CakePHP/mySQL, the most notable functions are: a real time (Ajax Polling) feed where the users can interact like in a message board, and a system that collects informations about the users on the game to use on the site, this information includes avatar, country and data about rooms on the game. The internet radio uses SHOUTcast server.</p>
+			</div>
+
+			<div class="experience">
+				<h3>PowPowBot </h3>
+				<p><a href="http://telegram.me/powpowbot" target="_blank">PowPow</a> is a Telegram bot built from <a href="http://guisehn.com/" target="_blank">Guilherme's</a> text based FPS game. It was made using node.js and the code can be found on <a href="https://github.com/dygufa/PowPowBot" target="_blank">GitHub</a>.</p>
+			</div>
+
+			<div class="experience">
+				<h3>and more...</h3>
+				<p>Besides the ones listed above I have made a few blogs using WordPress as freelancer. Some examples are: a fashion blog called <b>JuThome</b> <a href="media/img/sites/juthome.com.br.png" target="_blank" class="screenshot">(screenshot)</a>, a internet radio similar to Cooeemix called <b>Cooeemania</b>, a fansite for <b>Emma Stone</b> <a href="media/img/sites/emmastoneus.com.png" target="_blank" class="screenshot">(screenshot)</a> and the webpage for the <b>Curitiba International Biennial</b> <a href="media/img/sites/bienalcuritiba.jpg" target="_blank" class="screenshot">(screenshot)</a>.</p>
+			</div>
+		</section>
+
+		<section id="education">
+			<div class="main-icon">
+				<i class="fa fa-university" aria-hidden="true"></i>
+			</div>
+			<h2>Education</h2>
+
+			<div class="education">
+				<h3>Universidade Federal da Bahia</h3>
+				<p>Currently on the 8th semester of Computer Engeenering!</p>
+			</div>
+
+			<div class="education">
+				<h3>University of Nevada, Reno</h3>
+				<p>Studied Computer Engeenering for 2 semesters.</p>
+			</div>
+		</section>
+	</div>
 </body>
 </html>
