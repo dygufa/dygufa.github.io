@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/dygufa
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://dygufa.com
+  * I am dygufa (https://keybase.io/dygufa) on keybase.
+  * I have a public key ASABXdUvh03tkAMNP5-eMzCPxTm5SnpgQcr6ElhOhOi4Fwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010145f872aae39284ffce519be2f54db0c9a19ec72c94aef4287fb2fdaa8e6a37460a",
+      "host": "keybase.io",
+      "kid": "0120015dd52f874ded90030d3f9f9e33308fc539b94a7a6041cafa12584e84e8b8170a",
+      "uid": "e3e588d81bf7738ff91f4eb432d09a19",
+      "username": "dygufa"
+    },
+    "merkle_root": {
+      "ctime": 1502726985,
+      "hash": "4a58882e5829ad2263a941cb4e93a14cd7e77e5e0ce1f0ce5a28e3b9a7edd6f6f01c91a90bfb969c76cfe7dee9d241051d074ef2b1d7450419dd46679c1ebe7c",
+      "hash_meta": "d46e0ce55aa566ac6151492fde1b0fb8b42949c9a5ead9e7ba94ee029279298e",
+      "seqno": 1325170
+    },
+    "service": {
+      "hostname": "dygufa.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.27"
+  },
+  "ctime": 1502727007,
+  "expire_in": 504576000,
+  "prev": "146c1391241f4ab6ec9341723b2d2d55891b561afc5faf6e30efa989a1f01d85",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgAV3VL4dN7ZADDT+fnjMwj8U5uUp6YEHK+hJYToTouBcKp3BheWxvYWTFA0F7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNDVmODcyYWFlMzkyODRmZmNlNTE5YmUyZjU0ZGIwYzlhMTllYzcyYzk0YWVmNDI4N2ZiMmZkYWE4ZTZhMzc0NjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMDE1ZGQ1MmY4NzRkZWQ5MDAzMGQzZjlmOWUzMzMwOGZjNTM5Yjk0YTdhNjA0MWNhZmExMjU4NGU4NGU4YjgxNzBhIiwidWlkIjoiZTNlNTg4ZDgxYmY3NzM4ZmY5MWY0ZWI0MzJkMDlhMTkiLCJ1c2VybmFtZSI6ImR5Z3VmYSJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUwMjcyNjk4NSwiaGFzaCI6IjRhNTg4ODJlNTgyOWFkMjI2M2E5NDFjYjRlOTNhMTRjZDdlNzdlNWUwY2UxZjBjZTVhMjhlM2I5YTdlZGQ2ZjZmMDFjOTFhOTBiZmI5NjljNzZjZmU3ZGVlOWQyNDEwNTFkMDc0ZWYyYjFkNzQ1MDQxOWRkNDY2NzljMWViZTdjIiwiaGFzaF9tZXRhIjoiZDQ2ZTBjZTU1YWE1NjZhYzYxNTE0OTJmZGUxYjBmYjhiNDI5NDljOWE1ZWFkOWU3YmE5NGVlMDI5Mjc5Mjk4ZSIsInNlcW5vIjoxMzI1MTcwfSwic2VydmljZSI6eyJob3N0bmFtZSI6ImR5Z3VmYS5jb20iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4yNyJ9LCJjdGltZSI6MTUwMjcyNzAwNywiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiIxNDZjMTM5MTI0MWY0YWI2ZWM5MzQxNzIzYjJkMmQ1NTg5MWI1NjFhZmM1ZmFmNmUzMGVmYTk4OWExZjAxZDg1Iiwic2Vxbm8iOjIwLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQE8WJffj+PqLMJ8MdTehBYF/WaphBBZbvkvZdlwGaKSMf8rJRkUkT/JgAE+C8bOqE30pjC2p9e36m4qFbqqnewioc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCBvR4f/2ilC+neP8cw96OZo4ZpOD+4ZhyW7RJMJSzyLpqN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dygufa
+
+==================================================================
