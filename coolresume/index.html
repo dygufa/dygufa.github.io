@@ -12,7 +12,7 @@
 <body>
 	<pre><code class="javascript">var me = new coolDeveloper({
 	name: 'Rodrigo', 
-	age: 21, 
+	age: new Date(new Date() - new Date(1994, 4)).getUTCFullYear() - 1970, 
 	email: 'hello@dygufa.com'
 });
 
@@ -20,15 +20,18 @@
  * Skills
  */
 
-me.addSkill({name: 'JavaScript', yearsOfExperience: 6, recentExperience: true, comment: 'It includes experience with node.js for 4 years.'});
+me.addSkill({name: 'JavaScript', yearsOfExperience: 8, recentExperience: true, comment: 'It includes experience with node.js for 5 years.'});
+me.addSkill({name: 'React', yearsOfExperience: 2, recentExperience: true, comment: ''});
+me.addSkill({name: 'Typescript', yearsOfExperience: 2, recentExperience: true, comment: ''});
+me.addSkill({name: 'Docker', yearsOfExperience: 2, recentExperience: true, comment: ''});
 me.addSkill({name: 'HTML', yearsOfExperience: 7, recentExperience: true, comment: ''});
 me.addSkill({name: 'CSS', yearsOfExperience: 7, recentExperience: true, comment: ''});
-me.addSkill({name: 'PHP', yearsOfExperience: 7, recentExperience: true, comment: '&lt;3 CakePHP'});
-me.addSkill({name: 'UNIX', yearsOfExperience: 5, recentExperience: true, comment: ''});
+me.addSkill({name: 'PHP', yearsOfExperience: 5, recentExperience: false, comment: '&lt;3 CakePHP'});
+me.addSkill({name: 'UNIX', yearsOfExperience: 8, recentExperience: true, comment: ''});
 me.addSkill({name: 'Apache', yearsOfExperience: 3, recentExperience: false, comment: ''});
-me.addSkill({name: 'NGINX', yearsOfExperience: 5, recentExperience: true, comment: ''});	
-me.addSkill({name: 'Git', yearsOfExperience: 4, recentExperience: true, comment: ''});
-me.addSkill({name: 'mySQL', yearsOfExperience: 7, recentExperience: true, comment: ''});
+me.addSkill({name: 'NGINX', yearsOfExperience: 7, recentExperience: true, comment: ''});	
+me.addSkill({name: 'Git', yearsOfExperience: 8, recentExperience: true, comment: ''});
+me.addSkill({name: 'mySQL', yearsOfExperience: 7, recentExperience: false, comment: ''});
 me.addSkill({name: 'MongoDB', yearsOfExperience: 2, recentExperience: false, comment: ''});
 me.addSkill({name: 'Python', yearsOfExperience: 2, recentExperience: false, comment: ''});
 me.addSkill({name: 'SHOUTCast', yearsOfExperience: 2, recentExperience: true, comment: ''});
@@ -39,27 +42,12 @@ me.addSkill({name: 'SHOUTCast', yearsOfExperience: 2, recentExperience: true, co
 
 me.addExperience({
 	name: 'Daiub', 
-	description: "Daiub is my current personal project. It's basically a live chat platform that allows customers to get support directly from companies' websites (inspired by Olark). It is being made using Meteor.js (node.js), MongoDB and Redis."
-});
-
-me.addExperience({
-	name: 'Pixelaria', 
-	description: "At first, Pixelaria was a fansite of Habbo Hotel - which is a famous social game - specializing in pixel art. After a few years the team has decided to focus on digital art. Pixelaria was awarded as third for Best Fansite between teens and features of it were used as inspiration for many other websites. In the period between 2010 to 2013 I was the Administrator and Developer for the website, managing a team with more than 50 people and over 1000 active users. The website was a LAMP application, using Ajax Polling to deliver features such as alerts, shared chat between users and a fully customizable page for each user using drag and drop."
+	description: "Memuy is the easiest way to share files among friends. You just need to open memuy.com, drag and drop your files and then share the room name. To make easier for you to memorize the room name, we use short combinations, usually between 6 and 8 characthers. Considering this a solution for "fast-sharing", the rooms and files will be kept online for only 24 hours. Check it online on memuy.com."
 });
 
 me.addExperience({
 	name: 'Adivinhe', 
 	description: "Adivinhe is a multiplayer game similar to the famous iSketch, the goal is to guess what is being drawn for the other players. Unlike iSketch, Adivinhe doesn’t use Adobe Flash Player, it was made using HTML5 (canvas) and NGINX/Node.js/MongoDB with Ajax Long-Polling and integrated Facebook login. Adivinhe's code is available on github.com/dygufa/adivinhe."
-});
-
-me.addExperience({
-	name: 'Cooeemix', 
-	description: "Cooeemix is an internet radio/portal for players from Club Cooee. The website uses CakePHP/mySQL, the functions more notable are: a real time (Ajax Polling) feed where the users can interact like in a message board, and a system that collects informations about the users on the game to use on the site, this information includes avatar, country and data about rooms on the game. The internet radio uses SHOUTcast server."
-});
-
-me.addExperience({
-	name: 'and more...', 
-	description: "Besides the ones listed above I have made a few blogs using WordPress as freelancer. Some examples are: a fashion blog called juthome.com.br, a internet radio similar to Cooeemix called Cooeemania, a fansite for Emma Stone and the webpage for the Curitiba International Biennial."
 });
 
 /**
