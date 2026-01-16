@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<!-- Global Site Tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42103883-1"></script>
 	<script>
@@ -17,6 +18,98 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="media/css/style.css">
 	<script src="https://use.fontawesome.com/8080b9df3d.js"></script>
+	<style>
+		#secret-modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			z-index: 9999;
+			justify-content: center;
+			align-items: center;
+		}
+		#secret-modal.active {
+			display: flex;
+		}
+		#secret-modal-content {
+			background: #1a1a1a;
+			padding: 30px;
+			border-radius: 12px;
+			text-align: center;
+			max-width: 400px;
+			width: 90%;
+			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+		}
+		#secret-modal-content h3 {
+			color: #fff;
+			margin: 0 0 20px 0;
+			font-size: 18px;
+		}
+		#secret-password {
+			width: 100%;
+			padding: 12px 15px;
+			border: 2px solid #333;
+			border-radius: 8px;
+			background: #2a2a2a;
+			color: #fff;
+			font-size: 16px;
+			box-sizing: border-box;
+			outline: none;
+			transition: border-color 0.2s;
+		}
+		#secret-password:focus {
+			border-color: #8a0e0e;
+		}
+		#secret-result {
+			margin-top: 15px;
+			padding: 15px;
+			border-radius: 8px;
+			display: none;
+			word-break: break-all;
+			white-space: pre-wrap;
+			text-align: left;
+		}
+		#secret-result.success {
+			display: block;
+			background: #1a3a1a;
+			color: #4ade80;
+		}
+		#secret-result.error {
+			display: block;
+			background: #3a1a1a;
+			color: #f87171;
+		}
+		.secret-btn {
+			margin-top: 15px;
+			padding: 10px 25px;
+			color: #fff;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 14px;
+			transition: background 0.2s;
+		}
+		#secret-submit {
+			background: #0e8a3d;
+		}
+		#secret-submit:hover {
+			background: #10a048;
+		}
+		#secret-close {
+			background: #8a0e0e;
+		}
+		#secret-close:hover {
+			background: #a01010;
+		}
+		.secret-buttons {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+		}
+	</style>
 </head>
 <body>
 	<div id="site">
@@ -38,5 +131,157 @@
 			</div>
 		</header>
 	</div>
+
+	<!-- Secret Modal -->
+	<div id="secret-modal">
+		<div id="secret-modal-content">
+			<h3>🔐 Digite a senha secreta</h3>
+			<input type="password" id="secret-password" placeholder="Senha..." autocomplete="off">
+			<div id="secret-result"></div>
+			<div class="secret-buttons">
+				<button id="secret-submit" class="secret-btn">Enviar</button>
+				<button id="secret-close" class="secret-btn">Fechar</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		(function() {
+			const ENCRYPTED_DATA = 'nFdJ0XHRcwcF3UGdtne6lAM5m0RzeaCTEjYfH6mmbJDj5QpBFH9aiPBoU+yz5NpkIKiFYV13fCHoK9Co97a6OgmEqR2K68e0umH4Xk7FFOcu';
+			const CLICKS_REQUIRED = 5;
+			const TIME_WINDOW = 2000; // 2 segundos
+
+			let clickTimestamps = [];
+
+			const avatar = document.getElementById('avatar');
+			const modal = document.getElementById('secret-modal');
+			const passwordInput = document.getElementById('secret-password');
+			const resultDiv = document.getElementById('secret-result');
+			const closeBtn = document.getElementById('secret-close');
+			const submitBtn = document.getElementById('secret-submit');
+
+			// Detectar 5 cliques em 2 segundos
+			avatar.addEventListener('click', function() {
+				const now = Date.now();
+				clickTimestamps.push(now);
+
+				// Remover cliques antigos (fora da janela de tempo)
+				clickTimestamps = clickTimestamps.filter(t => now - t < TIME_WINDOW);
+
+				if (clickTimestamps.length >= CLICKS_REQUIRED) {
+					clickTimestamps = [];
+					showModal();
+				}
+			});
+
+			function showModal() {
+				modal.classList.add('active');
+				passwordInput.value = '';
+				resultDiv.className = 'secret-result';
+				resultDiv.style.display = 'none';
+				passwordInput.focus();
+			}
+
+			function hideModal() {
+				modal.classList.remove('active');
+			}
+
+			closeBtn.addEventListener('click', hideModal);
+
+			modal.addEventListener('click', function(e) {
+				if (e.target === modal) hideModal();
+			});
+
+			// Base64 para ArrayBuffer
+			function base64ToArrayBuffer(base64) {
+				const binaryString = atob(base64);
+				const bytes = new Uint8Array(binaryString.length);
+				for (let i = 0; i < binaryString.length; i++) {
+					bytes[i] = binaryString.charCodeAt(i);
+				}
+				return bytes;
+			}
+
+			// Importar senha diretamente como chave AES
+			async function importKey(password) {
+				const enc = new TextEncoder();
+				const keyData = enc.encode(password);
+
+				// A senha deve ter 16 bytes (AES-128) ou 32 bytes (AES-256)
+				if (keyData.length !== 16 && keyData.length !== 32) {
+					throw new Error('A senha deve ter 16 ou 32 caracteres');
+				}
+
+				return crypto.subtle.importKey(
+					'raw',
+					keyData,
+					{ name: 'AES-GCM' },
+					false,
+					['decrypt']
+				);
+			}
+
+			// Descriptografar AES-GCM
+			async function decrypt(password) {
+				try {
+					const dataArray = base64ToArrayBuffer(ENCRYPTED_DATA);
+
+					// IV "10" como string UTF-8 (2 bytes apenas, sem padding!)
+					const iv = new TextEncoder().encode("10");
+
+					// Os dados são: ciphertext + tag (16 bytes)
+					const ciphertext = dataArray;
+
+					const key = await importKey(password);
+
+					const decrypted = await crypto.subtle.decrypt(
+						{ name: 'AES-GCM', iv: iv, tagLength: 128 },
+						key,
+						ciphertext
+					);
+
+					return new TextDecoder().decode(decrypted);
+				} catch (e) {
+					throw new Error('Senha incorreta ou dados corrompidos');
+				}
+			}
+
+			// Função para tentar descriptografar
+			async function tryDecrypt() {
+				const password = passwordInput.value;
+				if (!password) return;
+
+				try {
+					const decrypted = await decrypt(password);
+					resultDiv.textContent = decrypted;
+					resultDiv.className = '';
+					resultDiv.classList.add('success');
+					resultDiv.style.display = 'block';
+				} catch (err) {
+					resultDiv.textContent = 'Senha incorreta!';
+					resultDiv.className = '';
+					resultDiv.classList.add('error');
+					resultDiv.style.display = 'block';
+				}
+			}
+
+			// Handler do input (Enter)
+			passwordInput.addEventListener('keydown', function(e) {
+				if (e.key === 'Enter') {
+					tryDecrypt();
+				}
+			});
+
+			// Handler do botão enviar
+			submitBtn.addEventListener('click', tryDecrypt);
+
+			// Fechar com ESC
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape' && modal.classList.contains('active')) {
+					hideModal();
+				}
+			});
+		})();
+	</script>
 </body>
 </html>
